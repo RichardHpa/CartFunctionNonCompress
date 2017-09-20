@@ -4,7 +4,7 @@
 	<style type="text/css">
 	.box{
 		width: 150px;
-		min-height: 150px;
+		min-height: 300px;
 		float: left;
 		margin-left: 10px;
 		text-align: center;
@@ -31,6 +31,10 @@
 
 	.greyBox{
 		background-color: grey;
+	}
+
+	.orangeBox{
+		background-color: orange;
 	}
 	table, td, th {
 	    border: 1px solid black;
@@ -62,6 +66,7 @@
 	<div class="row">
 		<div class="box redBox product">
 			<p class="product_title">red roses</p>
+			<p class="product_description">This is red roses</p>
 			<p>$<span class="product_price">5.00</span></p>
 			<button class="add">+</button>
 			<button class="remove">-</button>
@@ -69,6 +74,7 @@
 		</div>
 		<div class="box greenBox product">
 			<p class="product_title">green</p>
+			<p class="product_description">This is green Limes</p>
 			<p>$<span class="product_price">10.99</span></p>
 			<button class="add">+</button>
 			<button class="remove">-</button>
@@ -76,6 +82,7 @@
 		</div>
 		<div class="box blueBox product">
 			<p class="product_title">blue</p>
+			<p class="product_description">This is blue Dye</p>
 			<p>$<span class="product_price">20.00</span></p>
 			<button class="add">+</button>
 			<button class="remove">-</button>
@@ -83,10 +90,18 @@
 		</div>
 		<div class="box greyBox product">
 			<p class="product_title">grey</p>
+			<p class="product_description">This is a grey Duck</p>
 			<p>$<span class="product_price">5.25</span></p>
 			<button class="add">+</button>
 			<button class="remove">-</button>
 			<img class="product_image" src="images/greyDuck.jpg">
+		</div>
+		<div class="box orangeBox product">
+			<p class="product_title">No Image</p>
+			<p class="product_description">This product has no Image</p>
+			<p>$<span class="product_price">5.25</span></p>
+			<button class="add">+</button>
+			<button class="remove">-</button>
 		</div>
 
 
@@ -102,6 +117,7 @@
 			<thead>
 				<tr>
 					<th>Product Name</th>
+					<th>Description</th>
 					<th>Quantity</th>
 					<th>Price</th>
 					<th>Subtotal</th>
@@ -111,6 +127,7 @@
 			<tbody id="CartContainer">
 				<tr id="template" class="product">
 					<td class="product_title"></td>
+					<td class="product_description"></td>
 					<td class="product_quantity"></td>
 					<td>$<span class='product_price'></span></td>
 					<td>$<span class='sub_price'></span></td>
@@ -124,7 +141,7 @@
 	<a href="cart.html">Go to Cart</a>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/cartFunction.min.js"></script>
+	<script src="js/cartFunction.js"></script>
 
 </body>
 </html>

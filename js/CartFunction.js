@@ -17,7 +17,10 @@ $(document).ready(function(){
 			newEntry.find('.product_quantity').text(item['quantity']);
 			newEntry.find('.product_price').text(item['singlePrice']);
 			newEntry.find('.sub_price').text(item['price']);
-			newEntry.find('.product_image').attr("src",item['image']);
+			newEntry.find('.product_description').text(item['description']);
+			if(item['image'] !== "noImage"){
+				newEntry.find('.product_image').attr("src",item['image']);
+			}
 			newEntry.removeAttr('id');
 			newEntry.addClass(ClassName);
 			$("#CartContainer").append(newEntry);
@@ -45,9 +48,16 @@ $(document).ready(function(){
 //If there is it will add the new quantity
 $(document).on('click', '.add', function(e) {
 	$("#cartTable").show();
-	var image = $(this).closest(".product").find('.product_image')[0].src;
+	var image = $(this).closest(".product").find('.product_image')[0];
+	if(image !== undefined){
+		image = image.src;
+	} else {
+		image = "noImage";
+	}
 	var value = $(this).closest(".product").find('.product_title').text();
 	var price = parseFloat($(this).closest(".product").find('.product_price').text()).toFixed(2);
+	var description = $(this).closest(".product").find('.product_description').text();
+	console.log(description);
 	var quantity = 1;
 	var CartItemFound = false;
 	var fullprice = parseFloat(price * quantity).toFixed(2);
@@ -87,7 +97,8 @@ $(document).on('click', '.add', function(e) {
 			"quantity" : quantity,
 			"singlePrice": price,
 			"price" : fullprice,
-			"image": image
+			"image": image,
+			"description": description
 		});
 		sessionStorage.setItem("items", JSON.stringify(cart));
 		$(".empty").remove();
@@ -96,6 +107,10 @@ $(document).on('click', '.add', function(e) {
 		newEntry.find('.product_quantity').text(1);
 		newEntry.find('.product_price').text(price);
 		newEntry.find('.sub_price').text(price);
+		newEntry.find('.product_description').text(description);
+		if(image !== "noImage"){
+			newEntry.find('.product_image').attr("src",image);
+		}
 		newEntry.removeAttr('id');
 		newEntry.addClass(ClassName);
 		$("#CartContainer").append(newEntry);		
