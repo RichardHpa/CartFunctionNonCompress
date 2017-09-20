@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Cart Example</title>
+	<style type="text/css">
+	table, td, th {
+	    border: 1px solid black;
+	}
+
+	table {
+	    border-collapse: collapse;
+	    width: 100%;
+	    display: none;
+	}
+
+	th {
+	    text-align: left;
+	}
+
+	#template{
+		display: none;
+	}
+
+	img{
+		width: 130px;
+	}
+	</style>
+</head>
+<body>
+	
+	<p>What is in my cart</p>
+	<div id="cart">
+		<table id="cartTable">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Product Name</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Subtotal</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody id="CartContainer">
+				<tr id="template" class="product">
+					<td><img class="product_image" src=".//"></td>
+					<td class="product_title"></td>
+					<td class="product_quantity"></td>
+					<td>$<span class='product_price'></span></td>
+					<td>$<span class='sub_price'></span></td>
+					<td><button class='add'>Add</button><button class='remove'>Remove</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/cartFunction.min.js"></script>
+</body>
+</html>

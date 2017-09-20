@@ -1,0 +1,130 @@
+<html>
+<head>
+	<title>adding Cart Example</title>
+	<style type="text/css">
+	.box{
+		width: 150px;
+		min-height: 150px;
+		float: left;
+		margin-left: 10px;
+		text-align: center;
+		color: white;
+	}
+
+	.row:after{
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+	.redBox{
+		background-color: red;
+	}
+
+	.greenBox{
+		background-color: green;
+	}
+
+	.blueBox{
+		background-color: blue;
+	}
+
+	.greyBox{
+		background-color: grey;
+	}
+	table, td, th {
+	    border: 1px solid black;
+	}
+
+	table {
+	    border-collapse: collapse;   
+	}
+
+	#cartTable{
+		display: none;
+	}
+
+	th {
+	    text-align: left;
+	}
+
+	#template{
+		display: none;
+	}
+	img{
+		width: 100px;
+	}
+	</style>
+</head>
+<body>
+	<h1>add New Items to Cart</h1>
+
+	<div class="row">
+		<div class="box redBox product">
+			<p class="product_title">red roses</p>
+			<p>$<span class="product_price">5.00</span></p>
+			<button class="add">+</button>
+			<button class="remove">-</button>
+			<img class="product_image" src="images/redRoses.jpg">
+		</div>
+		<div class="box greenBox product">
+			<p class="product_title">green</p>
+			<p>$<span class="product_price">10.99</span></p>
+			<button class="add">+</button>
+			<button class="remove">-</button>
+			<img class="product_image" src="images/greenLimes.jpg">
+		</div>
+		<div class="box blueBox product">
+			<p class="product_title">blue</p>
+			<p>$<span class="product_price">20.00</span></p>
+			<button class="add">+</button>
+			<button class="remove">-</button>
+			<img class="product_image" src="images/blueDye.jpg">
+		</div>
+		<div class="box greyBox product">
+			<p class="product_title">grey</p>
+			<p>$<span class="product_price">5.25</span></p>
+			<button class="add">+</button>
+			<button class="remove">-</button>
+			<img class="product_image" src="images/greyDuck.jpg">
+		</div>
+
+
+		</div>
+	</div>
+
+	<hr>
+	<button id="clear">Clear Cart</button>
+	<p>What is in my cart</p>
+	<strong><p>Cart Count (<span class="cartCount"></span>)</p></strong>
+	<div id="cart">
+		<table id="cartTable">
+			<thead>
+				<tr>
+					<th>Product Name</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Subtotal</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody id="CartContainer">
+				<tr id="template" class="product">
+					<td class="product_title"></td>
+					<td class="product_quantity"></td>
+					<td>$<span class='product_price'></span></td>
+					<td>$<span class='sub_price'></span></td>
+					<td><button class='add'>Add</button><button class='remove'>Remove</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<strong><p>Total Order Price ($<span class="priceCount"></span>)</p></strong>
+	<hr>
+	<a href="cart.html">Go to Cart</a>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/cartFunction.min.js"></script>
+
+</body>
+</html>
